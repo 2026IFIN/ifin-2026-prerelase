@@ -1,0 +1,42 @@
+seed: 4716
+deterministic: true
+device: auto
+
+model:
+  in_channels: 3
+  out_channels: 3
+  height: 270
+  width: 480
+  dim: 32
+  depth: 3
+  exchange: 0.2
+  k: 1
+  repeat_psf: true
+  random_init_psf: false
+
+data:
+  dataset: waller
+  waller_path: ../../wallerlab/dataset
+  psf_path: ../../wallerlab/dataset/psf.tiff
+  psf_bg_patch: 15
+  psf_size: 32
+
+train:
+  epochs: 100
+  num_samples: 8
+  batch_size: 4
+  num_workers: 4
+  pin_memory: false
+
+eval:
+  num_samples: 4
+  batch_size: 4
+  num_workers: 4
+  pin_memory: false
+
+optimizer:
+  lr: 0.0001
+
+checkpoint:
+  save: true
+  output_dir: outputs/checkpoints

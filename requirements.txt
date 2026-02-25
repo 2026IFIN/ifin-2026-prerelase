@@ -1,0 +1,9 @@
+torch
+torchvision
+numpy
+scipy
+einops
+PyYAML
+pytest
+pandas
+opencv-python
